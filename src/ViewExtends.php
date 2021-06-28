@@ -6,19 +6,17 @@ namespace Pollen\ViewExtends;
 
 use Pollen\Support\Concerns\BootableTrait;
 use Pollen\Support\Proxy\ContainerProxy;
-use Pollen\Support\Proxy\FieldProxy;
-use Pollen\Support\Proxy\PartialProxy;
 use Pollen\Support\Proxy\ViewProxy;
 use Pollen\View\ViewManagerInterface;
+use Pollen\ViewExtends\Extensions\FakerViewExtension;
+use Pollen\ViewExtends\Extensions\FieldViewExtension;
+use Pollen\ViewExtends\Extensions\PartialViewExtension;
 use Psr\Container\ContainerInterface as Container;
-use Throwable;
 
 class ViewExtends implements ViewExtendsInterface
 {
     use BootableTrait;
     use ContainerProxy;
-    use FieldProxy;
-    use PartialProxy;
     use ViewProxy;
 
     /**
@@ -42,31 +40,9 @@ class ViewExtends implements ViewExtendsInterface
     public function boot(): void
     {
         if (!$this->isBooted()) {
-            try {
-                $this->field();
-
-                $this->viewManager()->setSharedFunction(
-                    'field',
-                    function (string $alias, $idOrParams = null, ?array $params = null) {
-                        return $this->field($alias, $idOrParams, $params)->render();
-                    }
-                );
-            } catch (Throwable $e) {
-                unset($e);
-            }
-
-            try {
-                $this->partial();
-
-                $this->viewManager()->setSharedFunction(
-                    'partial',
-                    function (string $alias, $idOrParams = null, ?array $params = null) {
-                        return $this->partial($alias, $idOrParams, $params)->render();
-                    }
-                );
-            } catch (Throwable $e) {
-                unset($e);
-            }
+            $this->viewManager()->registerExtension('field', FieldViewExtension::class, true);
+            $this->viewManager()->registerExtension('faker', FakerViewExtension::class, true);
+            $this->viewManager()->registerExtension('partial', PartialViewExtension::class, true);
 
             $this->setBooted();
         }

@@ -6,14 +6,12 @@ namespace Pollen\ViewExtends;
 
 use Pollen\Support\Concerns\BootableTraitInterface;
 use Pollen\Support\Proxy\ContainerProxyInterface;
-use Pollen\Support\Proxy\FieldProxyInterface;
-use Pollen\Support\Proxy\PartialProxyInterface;
+use Pollen\Support\Proxy\ViewProxyInterface;
 
 interface ViewExtendsInterface extends
     BootableTraitInterface,
     ContainerProxyInterface,
-    FieldProxyInterface,
-    PartialProxyInterface
+    ViewProxyInterface
 {
     /**
      * Booting.
