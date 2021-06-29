@@ -9,7 +9,7 @@
     "extend",
     "functions"
   ],
-  "time": "2021-06-28",
+  "time": "2021-06-29",
   "license": "MIT",
   "authors": [
     {
@@ -40,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Pollen\\ViewExtends\\": "tests"
+      "Pollen\\ViewExtends\\Test\\": "tests"
     }
   },
   "suggest": {
