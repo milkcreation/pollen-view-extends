@@ -8,6 +8,9 @@ use Pollen\Support\Concerns\BootableTrait;
 use Pollen\Support\Proxy\ContainerProxy;
 use Pollen\Support\Proxy\ViewProxy;
 use Pollen\View\ViewManagerInterface;
+use Pollen\ViewExtends\Extensions\AssetFooterViewExtension;
+use Pollen\ViewExtends\Extensions\AssetHeadViewExtension;
+use Pollen\ViewExtends\Extensions\AssetViewExtension;
 use Pollen\ViewExtends\Extensions\FakerViewExtension;
 use Pollen\ViewExtends\Extensions\FieldViewExtension;
 use Pollen\ViewExtends\Extensions\PartialViewExtension;
@@ -40,8 +43,10 @@ class ViewExtends implements ViewExtendsInterface
     public function boot(): void
     {
         if (!$this->isBooted()) {
+            $this->viewManager()->registerExtension('asset', AssetViewExtension::class, true);
+            $this->viewManager()->registerExtension('asset_head', AssetHeadViewExtension::class, true);
+            $this->viewManager()->registerExtension('asset_footer', AssetFooterViewExtension::class, true);
             $this->viewManager()->registerExtension('field', FieldViewExtension::class, true);
-            $this->viewManager()->registerExtension('faker', FakerViewExtension::class, true);
             $this->viewManager()->registerExtension('partial', PartialViewExtension::class, true);
 
             $this->setBooted();
