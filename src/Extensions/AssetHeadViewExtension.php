@@ -55,6 +55,6 @@ class AssetHeadViewExtension extends ViewExtension
 
     protected function getFunction(): string
     {
-        return $this->asset()->handleHeadQueue();
+        return $this->asset()->getHead();
     }
 }

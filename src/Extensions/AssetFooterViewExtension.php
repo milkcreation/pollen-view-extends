@@ -55,6 +55,6 @@ class AssetFooterViewExtension extends ViewExtension
 
     protected function getFunction(): string
     {
-        return $this->asset()->handleFooterQueue();
+        return $this->asset()->getFooter();
     }
 }
