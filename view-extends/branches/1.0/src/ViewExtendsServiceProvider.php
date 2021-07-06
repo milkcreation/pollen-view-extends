@@ -24,7 +24,9 @@ class ViewExtendsServiceProvider extends BootableServiceProvider
      */
     public function boot(): void
     {
-        $this->getContainer()->get(ViewExtendsInterface::class);
+        if ($this->getContainer()->has(ViewManagerInterface::class)) {
+            $this->getContainer()->get(ViewExtendsInterface::class);
+        }
     }
 
     /**

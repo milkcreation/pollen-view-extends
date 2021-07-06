@@ -36,7 +36,10 @@ class AssetFooterViewExtension extends ViewExtension
                     $this->getName(),
                     function () {
                         return $this->getFunction();
-                    }
+                    },
+                    [
+                        'is_safe' => ['html'],
+                    ]
                 )
             );
         }
