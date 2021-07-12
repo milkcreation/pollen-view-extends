@@ -1,6 +1,6 @@
 {
   "name": "pollen-solutions/view-extends",
-  "description": "Pollen View Extends Component - Pollen view component extended functionality.",
+  "description": "Pollen Solutions - View Extends Component - Pollen view component extended functionality.",
   "homepage": "https://www.presstify.com/pollen-solutions/view-extends/",
   "keywords": [
     "pollen-solutions",
@@ -9,18 +9,12 @@
     "extend",
     "functions"
   ],
-  "time": "2021-07-06",
+  "time": "2021-07-09",
   "license": "MIT",
   "authors": [
     {
       "name": "Jordy Manner",
       "email": "jordy@presstify.com"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://composer.presstify.com/pollen-solutions/"
     }
   ],
   "require": {
@@ -43,7 +37,11 @@
     }
   },
   "suggest": {
-    "pollen-solutions/container" : "Pollen Container Component - PSR-11 ready Dependencies Injection Container."
+    "pollen-solutions/asset" : "Pollen Solutions - Asset Component - Tools to manage assets in web applications.",
+    "pollen-solutions/container" : "Pollen Container Component - PSR-11 ready Dependencies Injection Container.",
+    "pollen-solutions/field" : "Pollen Solutions - Field Component - Collection of form fields.",
+    "pollen-solutions/form" : "Pollen Solutions - Form Component - Forms generator and processor.",
+    "pollen-solutions/partial" : "Pollen Solutions - Partial Component - Collection of web user interfaces."
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

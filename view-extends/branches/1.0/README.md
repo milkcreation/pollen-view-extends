@@ -1,4 +1,4 @@
-# Pollen View Extends Component
+# View Extends Component
 
 [![Latest Version](https://img.shields.io/badge/release-1.0.0-blue?style=for-the-badge)](https://www.presstify.com/pollen-solutions/view-extends/)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE.md)
